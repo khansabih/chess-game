@@ -1249,22 +1249,22 @@ public class chessGame{
                 BP8.showValidMoves(toShowBlack,toShowWhite,whitePlayers);
             }
             else if((playerChosen-1)==8){
-                BC1.showValidMoves();
+                BC1.showValidMoves(toShowBlack,toShowWhite,whitePlayers);
             }
             else if((playerChosen-1)==9){
-                BH1.showValidMoves();
+                BH1.showValidMoves(toShowBlack,toShowWhite,whitePlayers);
             }
             else if((playerChosen-1)==10){
-                BE1.showValidMoves();
+                BE1.showValidMoves(toShowBlack,toShowWhite,whitePlayers);
             }
             else if((playerChosen-1)==11){
-                BC2.showValidMoves();
+                BC2.showValidMoves(toShowBlack,toShowWhite,whitePlayers);
             }
             else if((playerChosen-1)==12){
-                BH2.showValidMoves();
+                BH2.showValidMoves(toShowBlack,toShowWhite,whitePlayers);
             }
             else if((playerChosen-1)==13){
-                BE2.showValidMoves();
+                BE2.showValidMoves(toShowBlack,toShowWhite,whitePlayers);
             }
             else if((playerChosen-1)==14){
                 BK.showValidMoves();
@@ -1312,22 +1312,22 @@ public class chessGame{
                 WP8.showValidMoves(toShowWhite,toShowBlack,blackPlayers);
             }
             else if((playerChosenW-1)==8){
-                WC1.showValidMoves();
+                WC1.showValidMoves(toShowWhite,toShowBlack,blackPlayers);
             }
             else if((playerChosenW-1)==9){
-                WH1.showValidMoves();
+                WH1.showValidMoves(toShowWhite,toShowBlack,blackPlayers);
             }
             else if((playerChosenW-1)==10){
-                WE1.showValidMoves();
+                WE1.showValidMoves(toShowWhite,toShowBlack,blackPlayers);
             }
             else if((playerChosenW-1)==11){
-                WC2.showValidMoves();
+                WC2.showValidMoves(toShowWhite,toShowBlack,blackPlayers);
             }
             else if((playerChosenW-1)==12){
-                WH2.showValidMoves();
+                WH2.showValidMoves(toShowWhite,toShowBlack,blackPlayers);
             }
             else if((playerChosenW-1)==13){
-                WE2.showValidMoves();
+                WE2.showValidMoves(toShowWhite,toShowBlack,blackPlayers);
             }
             else if((toShowWhite.get(playerChosenW-1).equals("WK"))){
                 WK.showValidMoves();
