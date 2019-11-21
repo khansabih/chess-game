@@ -107,7 +107,7 @@ public class chessGame{
             {
                 System.out.println("1 : "+ChessBoard[currentPositionX+1][currentPositionY-1]);
             }
-            else if(oTeam.contains(ChessBoard[currentPositionX+1][currentPositionY+1]))
+            if(oTeam.contains(ChessBoard[currentPositionX+1][currentPositionY+1]))
             {
                 System.out.println("2 : "+ChessBoard[currentPositionX+1][currentPositionY+1]);
             }
@@ -390,11 +390,114 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="BH"+number;
         }
-        void up_up_left(){}
-        void up_up_right(){}
-        void down_down_left(){}
-        void down_down_right(){}
-        void showValidMoves(){}
+        void up_up_left()
+        {
+            if((currentPositionX==0 || currentPositionX == 1) || currentPositionY == 0)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX + 2;
+                currentPositionY = currentPositionY - 1;
+                ChessBoard[currentPositionX][currentPositionY]="BH"+number;
+            }
+            
+        }
+        void up_up_right()
+        {
+            if((currentPositionX==0 || currentPositionX == 1) || currentPositionY == 7)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX + 2;
+                currentPositionY = currentPositionY + 1;
+                ChessBoard[currentPositionX][currentPositionY]="BH"+number;
+            }
+        }
+        void down_down_left()
+        {
+            if((currentPositionX==6 || currentPositionX == 7) || currentPositionY == 0)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX - 2;
+                currentPositionY = currentPositionY - 1;
+                ChessBoard[currentPositionX][currentPositionY]="BH"+number;
+            }
+        }
+        void down_down_right()
+        {
+            if((currentPositionX==6 || currentPositionX == 7) || currentPositionY == 7)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX - 2;
+                currentPositionY = currentPositionY + 1;
+                ChessBoard[currentPositionX][currentPositionY]="BH"+number;
+            }
+        }
+        void showValidMoves(ArrayList<String> players,ArrayList<String> oppositionTeam,
+        ArrayList<Object>oppositionPlayers)
+        {
+            if(currentPositionX!=0 || currentPositionY!=7){
+                if(!players.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                    ||!oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                ){
+                    System.out.println("1 : down_down_right");
+                    System.out.println("2 : down_down_left");
+                    System.out.println("3 : up_up_right");
+                    System.out.println("4 : up_up_left");
+                }
+                // else if(!players.contains(ChessBoard[currentPositionX-1][currentPositionY])){
+                //     System.out.println("2 : UP");
+                // }
+                if(currentPositionY!=7 || currentPositionY!=0){
+                    if(oppositionTeam.contains(ChessBoard[currentPositionX+2][currentPositionY+1])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX+2][currentPositionY-1])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY+2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY-2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-1][currentPositionY+2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-1][currentPositionY-2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-2][currentPositionY-1])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-2][currentPositionY+1])
+                    ){
+                        System.out.println("5 : ATTACK");
+                    }
+                }
+            }
+            try{
+                System.out.print("Your move : ");
+                int move = Integer.parseInt(globalBR.readLine());
+                if(move==1){
+                    this.down_down_right();
+                    
+                }
+                else if(move==2){
+                    this.down_down_left();
+                }
+                else if(move==3){
+                    this.up_up_right();
+                }
+                else if(move==4){
+                    this.up_up_left();
+                }
+                else if(move==5) {
+                    // fill here for attack move
+                }
+                else{
+                    System.out.println("Sorry there is no such move available.");
+                }
+                display();
+            }catch(IOException e){}
+        }
+
     }
     //WHITE HORSE
     static class WhiteHorse{
@@ -405,11 +508,113 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="WH"+number;
         }
-        void up_up_left(){}
-        void up_up_right(){}
-        void down_down_left(){}
-        void down_down_right(){}
-        void showValidMoves(){}
+        void up_up_left()
+        {
+            if((currentPositionX==0 || currentPositionX == 1) || currentPositionY == 0)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX + 2;
+                currentPositionY = currentPositionY - 1;
+                ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+            }
+            
+        }
+        void up_up_right()
+        {
+            if((currentPositionX==0 || currentPositionX == 1) || currentPositionY == 7)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX + 2;
+                currentPositionY = currentPositionY + 1;
+                ChessBoard[currentPositionX][currentPositionY]="wH"+number;
+            }
+        }
+        void down_down_left()
+        {
+            if((currentPositionX==6 || currentPositionX == 7) || currentPositionY == 0)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX - 2;
+                currentPositionY = currentPositionY - 1;
+                ChessBoard[currentPositionX][currentPositionY]="wH"+number;
+            }
+        }
+        void down_down_right()
+        {
+            if((currentPositionX==6 || currentPositionX == 7) || currentPositionY == 7)
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX - 2;
+                currentPositionY = currentPositionY + 1;
+                ChessBoard[currentPositionX][currentPositionY]="wH"+number;
+            }
+        }
+        void showValidMoves(ArrayList<String> players,ArrayList<String> oppositionTeam,
+        ArrayList<Object>oppositionPlayers)
+        {
+            if(currentPositionX!=0 || currentPositionY!=7){
+                if(!players.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                    ||!oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                ){
+                    System.out.println("1 : down_down_right");
+                    System.out.println("2 : down_down_left");
+                    System.out.println("3 : up_up_right");
+                    System.out.println("4 : up_up_left");
+                }
+                // else if(!players.contains(ChessBoard[currentPositionX-1][currentPositionY])){
+                //     System.out.println("2 : UP");
+                // }
+                if(currentPositionY!=7 || currentPositionY!=0){
+                    if(oppositionTeam.contains(ChessBoard[currentPositionX+2][currentPositionY+1])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX+2][currentPositionY-1])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY+2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY-2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-1][currentPositionY+2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-1][currentPositionY-2])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-2][currentPositionY-1])
+                    ||oppositionTeam.contains(ChessBoard[currentPositionX-2][currentPositionY+1])
+                    ){
+                        System.out.println("5 : ATTACK");
+                    }
+                }
+            }
+            try{
+                System.out.print("Your move : ");
+                int move = Integer.parseInt(globalBR.readLine());
+                if(move==1){
+                    this.down_down_right();
+                    
+                }
+                else if(move==2){
+                    this.down_down_left();
+                }
+                else if(move==3){
+                    this.up_up_right();
+                }
+                else if(move==4){
+                    this.up_up_left();
+                }
+                else if(move==5) {
+                    // fill here for attack move
+                }
+                else{
+                    System.out.println("Sorry there is no such move available.");
+                }
+                display();
+            }catch(IOException e){}
+        }
     }
     //BLACK ELEPHANT
     static class BlackElephant{
@@ -420,11 +625,108 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="BE"+number;
         }
-        void up(){}
-        void down(){}
-        void left(){}
-        void right(){}
-        void showValidMoves(){}
+        void up(int numberOfMoves)
+        {
+            if((currentPositionX==0))
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BE"+number;
+            }
+        }
+        void down(int numberOfMoves)
+        {
+            if((currentPositionX==7))
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX + numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BE"+number;
+            }
+        }
+        void left(int numberOfMoves)
+        {
+            if((currentPositionY==0))
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BE"+number;
+            }
+        }
+        void right(int numberOfMoves)
+        {
+            if(currentPositionY==7)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BE"+number;
+            }
+        }
+        void showValidMoves(ArrayList<String> players,ArrayList<String> oppositionTeam,
+        ArrayList<Object>oppositionPlayers)
+        {
+            if(currentPositionX!=0 || currentPositionY!=7){
+                if(!players.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                    ||!oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                ){
+                    System.out.println("1 : right");
+                    System.out.println("2 : left");
+                    System.out.println("3 : down");
+                    System.out.println("4 : up");
+                }
+                // else if(!players.contains(ChessBoard[currentPositionX-1][currentPositionY])){
+                //     System.out.println("2 : UP");
+                // }
+                if(currentPositionY!=7 || currentPositionY!=0){
+                    for (int i = 0; i < ChessBoard.length; i++)
+                    {
+                        if(oppositionTeam.contains(ChessBoard[currentPositionX - i][currentPositionY])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX + i][currentPositionY])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX][currentPositionY - i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX][currentPositionY + i])
+                        ){
+                            System.out.println("5 : ATTACK");
+                            break;
+                        }
+                    }
+                }
+            }
+            try{
+                System.out.print("Your move along with the number of moves seperated by a space : ");
+                int move = Integer.parseInt(globalBR.readLine());
+                int numberOfMoves = Integer.parseInt(globalBR.readLine());
+                if(move==1){
+                    this.right(numberOfMoves);
+                    
+                }
+                else if(move==2){
+                    this.left(numberOfMoves);
+                }
+                else if(move==3){
+                    this.down(numberOfMoves);
+                }
+                else if(move==4){
+                    this.up(numberOfMoves);
+                }
+                else if(move==5) {
+                    // fill here for attack move
+                }
+                else{
+                    System.out.println("Sorry there is no such move available.");
+                }
+                display();
+            }catch(IOException e){}
+        }
     }
     //WHITE ELEPHANT
     static class WhiteElephant{
@@ -435,11 +737,108 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="WE"+number;
         }
-        void up(){}
-        void down(){}
-        void left(){}
-        void right(){}
-        void showValidMoves(){}
+        void up(int numberOfMoves)
+        {
+            if((currentPositionX==0))
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WE"+number;
+            }
+        }
+        void down(int numberOfMoves)
+        {
+            if((currentPositionX==7))
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionX = currentPositionX + numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WE"+number;
+            }
+        }
+        void left(int numberOfMoves)
+        {
+            if((currentPositionY==0))
+            {
+                System.out.println("Can't move");
+            }
+            else
+            {
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WE"+number;
+            }
+        }
+        void right(int numberOfMoves)
+        {
+            if(currentPositionY==7)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WE"+number;
+            }
+        }
+        void showValidMoves(ArrayList<String> players,ArrayList<String> oppositionTeam,
+        ArrayList<Object>oppositionPlayers)
+        {
+            if(currentPositionX!=0 || currentPositionY!=7){
+                if(!players.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                    ||!oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                ){
+                    System.out.println("1 : right");
+                    System.out.println("2 : left");
+                    System.out.println("3 : down");
+                    System.out.println("4 : up");
+                }
+                // else if(!players.contains(ChessBoard[currentPositionX-1][currentPositionY])){
+                //     System.out.println("2 : UP");
+                // }
+                if(currentPositionY!=7 || currentPositionY!=0){
+                    for (int i = 0; i < ChessBoard.length; i++)
+                    {
+                        if(oppositionTeam.contains(ChessBoard[currentPositionX - i][currentPositionY])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX + i][currentPositionY])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX][currentPositionY - i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX][currentPositionY + i])
+                        ){
+                            System.out.println("5 : ATTACK");
+                            break;
+                        }
+                    }
+                }
+            }
+            try{
+                System.out.print("Your move along with the number of moves seperated by a space : ");
+                int move = Integer.parseInt(globalBR.readLine());
+                int numberOfMoves = Integer.parseInt(globalBR.readLine());
+                if(move==1){
+                    this.right(numberOfMoves);
+                    
+                }
+                else if(move==2){
+                    this.left(numberOfMoves);
+                }
+                else if(move==3){
+                    this.down(numberOfMoves);
+                }
+                else if(move==4){
+                    this.up(numberOfMoves);
+                }
+                else if(move==5) {
+                    // fill here for attack move
+                }
+                else{
+                    System.out.println("Sorry there is no such move available.");
+                }
+                display();
+            }catch(IOException e){}
+        }
     }
     //BLACK CAMEL
     static class BlackCamel{
@@ -450,11 +849,110 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="BC"+number;
         }
-        void topLeft(){}
-        void topRight(){}
-        void bottomLeft(){}
-        void bottomRight(){}
-        void showValidMoves(){}
+        void topLeft(int numberOfMoves)
+        {
+            if(currentPositionY==0 && currentPositionX==0)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX - numberOfMoves;
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BC"+number;
+            }
+        }
+        void topRight(int numberOfMoves)
+        {
+            if(currentPositionY==7 && currentPositionX==0)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX - numberOfMoves;
+                currentPositionY = currentPositionY + numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BC"+number;
+            }
+        }
+        void bottomLeft(int numberOfMoves)
+        {
+            if(currentPositionY==0 && currentPositionX==7)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX + numberOfMoves;
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BC"+number;
+            }
+        }
+        void bottomRight(int numberOfMoves)
+        {
+            if(currentPositionY==7 && currentPositionX==7)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX + numberOfMoves;
+                currentPositionY = currentPositionY + numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="BC"+number;
+            }
+        }
+        // showing error...check it at line 1251
+        void showValidMoves(ArrayList<String> players,ArrayList<String> oppositionTeam,
+        ArrayList<Object>oppositionPlayers)
+        {
+            if(currentPositionX!=0 || currentPositionY!=7){
+                if(!players.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                    ||!oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                ){
+                    System.out.println("1 : topLeft");
+                    System.out.println("2 : topRight");
+                    System.out.println("3 : bottomLeft");
+                    System.out.println("4 : bottomRight");
+                }
+                // else if(!players.contains(ChessBoard[currentPositionX-1][currentPositionY])){
+                //     System.out.println("2 : UP");
+                // }
+                if(currentPositionY!=7 || currentPositionY!=0){
+                    for (int i = 0; i < ChessBoard.length; i++)
+                    {
+                        if(oppositionTeam.contains(ChessBoard[currentPositionX - i][currentPositionY + i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX + i][currentPositionY + i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX - i][currentPositionY - i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX + i][currentPositionY + i])
+                        ){
+                            System.out.println("5 : ATTACK");
+                            break;
+                        }
+                    }
+                }
+            }
+            try{
+                System.out.print("Your move along with the number of moves seperated by a space : ");
+                int move = Integer.parseInt(globalBR.readLine());
+                int numberOfMoves = Integer.parseInt(globalBR.readLine());
+                if(move==1){
+                    this.topLeft(numberOfMoves);
+                    
+                }
+                else if(move==2){
+                    this.topRight(numberOfMoves);
+                }
+                else if(move==3){
+                    this.bottomLeft(numberOfMoves);
+                }
+                else if(move==4){
+                    this.bottomRight(numberOfMoves);
+                }
+                else if(move==5) {
+                    // fill here for attack move
+                }
+                else{
+                    System.out.println("Sorry there is no such move available.");
+                }
+                display();
+            }catch(IOException e){}
+        }
     }
     //WHITE CAMEL
     static class WhiteCamel{
@@ -465,11 +963,110 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="WC"+number;
         }
-        void topLeft(){}
-        void topRight(){}
-        void bottomLeft(){}
-        void bottomRight(){}
-        void showValidMoves(){}
+        void topLeft(int numberOfMoves)
+        {
+            if(currentPositionY==0 && currentPositionX==0)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX - numberOfMoves;
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WC"+number;
+            }
+        }
+        void topRight(int numberOfMoves)
+        {
+            if(currentPositionY==7 && currentPositionX==0)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX - numberOfMoves;
+                currentPositionY = currentPositionY + numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WC"+number;
+            }
+        }
+        void bottomLeft(int numberOfMoves)
+        {
+            if(currentPositionY==0 && currentPositionX==7)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX + numberOfMoves;
+                currentPositionY = currentPositionY - numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WC"+number;
+            }
+        }
+        void bottomRight(int numberOfMoves)
+        {
+            if(currentPositionY==7 && currentPositionX==7)
+            {
+                System.out.println("Can't move");
+            }
+            else{
+                currentPositionX = currentPositionX + numberOfMoves;
+                currentPositionY = currentPositionY + numberOfMoves;
+                ChessBoard[currentPositionX][currentPositionY]="WC"+number;
+            }
+        }
+        // showing error at line 1314 related to some function parameter..check
+        void showValidMoves(ArrayList<String> players,ArrayList<String> oppositionTeam,
+        ArrayList<Object>oppositionPlayers)
+        {
+            if(currentPositionX!=0 || currentPositionY!=7){
+                if(!players.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                    ||!oppositionTeam.contains(ChessBoard[currentPositionX+1][currentPositionY])
+                ){
+                    System.out.println("1 : topLeft");
+                    System.out.println("2 : topRight");
+                    System.out.println("3 : bottomLeft");
+                    System.out.println("4 : bottomRight");
+                }
+                // else if(!players.contains(ChessBoard[currentPositionX-1][currentPositionY])){
+                //     System.out.println("2 : UP");
+                // }
+                if(currentPositionY!=7 || currentPositionY!=0){
+                    for (int i = 0; i < ChessBoard.length; i++)
+                    {
+                        if(oppositionTeam.contains(ChessBoard[currentPositionX - i][currentPositionY + i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX + i][currentPositionY + i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX - i][currentPositionY - i])
+                        ||oppositionTeam.contains(ChessBoard[currentPositionX + i][currentPositionY + i])
+                        ){
+                            System.out.println("5 : ATTACK");
+                            break;
+                        }
+                    }
+                }
+            }
+            try{
+                System.out.print("Your move along with the number of moves seperated by a space : ");
+                int move = Integer.parseInt(globalBR.readLine());
+                int numberOfMoves = Integer.parseInt(globalBR.readLine());
+                if(move==1){
+                    this.topLeft(numberOfMoves);
+                    
+                }
+                else if(move==2){
+                    this.topRight(numberOfMoves);
+                }
+                else if(move==3){
+                    this.bottomLeft(numberOfMoves);
+                }
+                else if(move==4){
+                    this.bottomRight(numberOfMoves);
+                }
+                else if(move==5) {
+                    // fill here for attack move
+                }
+                else{
+                    System.out.println("Sorry there is no such move available.");
+                }
+                display();
+            }catch(IOException e){}
+        }
     }
 
     static void display(){
