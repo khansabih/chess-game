@@ -444,10 +444,6 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="BH"+number;
         }
-        void up_up_left(){}
-        void up_up_right(){}
-        void down_down_left(){}
-        void down_down_right(){}
         void showValidMoves(){
             if(currentPositionX==0){
                 if(currentPositionY==0){
