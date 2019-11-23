@@ -444,6 +444,10 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="BH"+number;
         }
+        void up_up_left(){}
+        void up_up_right(){}
+        void down_down_left(){}
+        void down_down_right(){}
         void showValidMoves(){
             if(currentPositionX==0){
                 if(currentPositionY==0){
@@ -879,11 +883,436 @@ public class chessGame{
             number = n;
             ChessBoard[currentPositionX][currentPositionY]="WH"+number;
         }
-        void up_up_left(){}
-        void up_up_right(){}
-        void down_down_left(){}
-        void down_down_right(){}
-        void showValidMoves(){}
+        void showValidMoves(){
+            if(currentPositionX==7){
+                if(currentPositionY==0){
+                    //up-up-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("5: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("7: MOVE TO "+(currentPositionX-2)+(currentPositionY+1));
+                    }
+                }
+                else if(currentPositionY==7){
+                    //up-up-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("6: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("8: MOVE TO "+(currentPositionX-2)+(currentPositionY-1));
+                    }
+                }
+                else if(currentPositionY>=1 && currentPositionY<=6){
+                    //up-up-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("6: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("8: MOVE TO "+(currentPositionX-2)+(currentPositionY-1));
+                    }
+                    //up-up-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("5: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("7: MOVE TO "+(currentPositionX-2)+(currentPositionY+1));
+                    }
+                }
+            }
+            else if(currentPositionX==6){
+                if(currentPositionY==0){
+                    //up-up-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("5: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("7: MOVE TO "+(currentPositionX-2)+(currentPositionY+1));
+                    }
+                }
+                else if(currentPositionY==7){
+                    //up-up-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("6: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("8: MOVE TO "+(currentPositionX-2)+(currentPositionY-1));
+                    }
+                }
+                else if(currentPositionY>=1 && currentPositionY<=6){
+                    //up-up-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("5: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("7: MOVE TO "+(currentPositionX-2)+(currentPositionY+1));
+                    }
+                    //up-up-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("6: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("8: MOVE TO "+(currentPositionX-2)+(currentPositionY-1));
+                    }
+                }
+            }
+            else if(currentPositionX==1){
+                if(currentPositionY==0){
+                    //down-down-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("1: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("3: MOVE TO "+(currentPositionX+2)+(currentPositionY+1));
+                    }
+
+                }
+                else if(currentPositionY==7){
+                    //down-down-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("2: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("4: MOVE TO "+(currentPositionX+2)+(currentPositionY-1));
+                    }
+                }
+                else if(currentPositionY>=1 && currentPositionY<=6){
+                    //down-down-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("2: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("4: MOVE TO "+(currentPositionX+2)+(currentPositionY-1));
+                    }
+                    //down-down-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("1: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("3: MOVE TO "+(currentPositionX+2)+(currentPositionY+1));
+                    }
+
+                }
+            }
+            else if(currentPositionX==0){
+                if(currentPositionY==0){
+                    //down-down-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("1: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("3: MOVE TO "+(currentPositionX+2)+(currentPositionY+1));
+                    }
+
+                }
+                else if(currentPositionY==7){
+                    //down-down-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("2: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("4: MOVE TO "+(currentPositionX+2)+(currentPositionY-1));
+                    }
+                }
+                else if(currentPositionY>=1 && currentPositionY<=6){
+                    //down-down-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("2: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("4: MOVE TO "+(currentPositionX+2)+(currentPositionY-1));
+                    }
+                    //down-down-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("1: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("3: MOVE TO "+(currentPositionX+2)+(currentPositionY+1));
+                    }
+
+                }
+            }
+            else if(currentPositionX>=2 && currentPositionX<=5){
+                if(currentPositionY==0){
+                    //up-up-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("5: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("7: MOVE TO "+(currentPositionX-2)+(currentPositionY+1));
+                    }
+                    //down-down-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("1: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("3: MOVE TO "+(currentPositionX+2)+(currentPositionY+1));
+                    }
+
+                }
+                else if(currentPositionY==7){
+                    //up-up-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("6: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("8: MOVE TO "+(currentPositionX-2)+(currentPositionY-1));
+                    }
+                    //down-down-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("2: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("4: MOVE TO "+(currentPositionX+2)+(currentPositionY-1));
+                    }
+                }
+                else if(currentPositionY>=1 && currentPositionY<=6){
+                    //up-up-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("5: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("7: MOVE TO "+(currentPositionX-2)+(currentPositionY+1));
+                    }
+                    //up-up-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("6: ATTACK "+ChessBoard[currentPositionX-2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX-2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("8: MOVE TO "+(currentPositionX-2)+(currentPositionY-1));
+                    }
+                    //down-down-left
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Attack
+                        System.out.println("2: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY-1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY-1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("4: MOVE TO "+(currentPositionX+2)+(currentPositionY-1));
+                    }
+                    //down-down-right
+                    if(toShowBlack.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Attack
+                        System.out.println("1: ATTACK "+ChessBoard[currentPositionX+2][currentPositionY+1]);
+                    }
+                    else if(toShowWhite.contains(ChessBoard[currentPositionX+2][currentPositionY+1])){
+                        //Can't move there
+                        System.out.println("Cant move there");
+                    }
+                    else{
+                        //Move there.
+                        System.out.println("3: MOVE TO "+(currentPositionX+2)+(currentPositionY+1));
+                    }
+
+                }
+            }
+            try{
+                System.out.print("Enter your move : ");
+                int move = Integer.parseInt(globalBR.readLine());
+                if(move==1){
+                    //Attack down-down-right
+                    System.out.println("Black sides "+ChessBoard[currentPositionX+2][currentPositionY+1]+" is eliminated!!");
+                    toShowBlack.remove(ChessBoard[currentPositionX+2][currentPositionY+1]);
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionX = currentPositionX+2;
+                    currentPositionY = currentPositionY+1;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+
+                }
+                else if(move == 2){
+                    //Attack down-down-left
+                    System.out.println("Black sides "+ChessBoard[currentPositionX+2][currentPositionY-1]+" is eliminated!!");
+                    toShowBlack.remove(ChessBoard[currentPositionX+2][currentPositionY-1]);
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionX = currentPositionX+2;
+                    currentPositionY = currentPositionY-1;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+                }
+                else if(move == 3){
+                    //move down-down-right
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionY = currentPositionY+1;
+                    currentPositionX = currentPositionX+2;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+                }
+                else if(move == 4){
+                    //move down-down-left
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionY = currentPositionY-1;
+                    currentPositionX = currentPositionX+2;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+                }
+                else if(move == 5){
+                    //Attack up-up-right
+                    System.out.println("Black sides "+ChessBoard[currentPositionX-2][currentPositionY+1]+" is eliminated!!");
+                    toShowBlack.remove(ChessBoard[currentPositionX-2][currentPositionY+1]);
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionX = currentPositionX-2;
+                    currentPositionY = currentPositionY+1;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+                }
+                else if(move == 6){
+                    //Attack up-up-left
+                    System.out.println("Black sides "+ChessBoard[currentPositionX-2][currentPositionY-1]+" is eliminated!!");
+                    toShowBlack.remove(ChessBoard[currentPositionX-2][currentPositionY-1]);
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionX = currentPositionX-2;
+                    currentPositionY = currentPositionY-1;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+                }
+                else if(move == 7){
+                    //move up-up-right
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionY = currentPositionY+1;
+                    currentPositionX = currentPositionX-2;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+                }
+                else if(move == 8){
+                    //move up-up-left
+                    ChessBoard[currentPositionX][currentPositionY]=(ChessBoard[currentPositionX][currentPositionY]=="-")?"-":"";
+                    currentPositionY = currentPositionY-1;
+                    currentPositionX = currentPositionX-2;
+                    ChessBoard[currentPositionX][currentPositionY]="WH"+number;
+                }
+                display();
+            }catch(IOException e){}
+        }
     }
     //BLACK ELEPHANT
     static class BlackElephant{
@@ -2323,9 +2752,9 @@ public class chessGame{
             // else if((playerChosenW-1)==8){
             //     WC1.showValidMoves();
             // }
-            // else if((playerChosenW-1)==9){
-            //     WH1.showValidMoves();
-            // }
+            else if((toShowWhite.get(playerChosenW-1).equals("WH1"))){
+                WH1.showValidMoves();
+            }
             else if((toShowWhite.get(playerChosenW-1).equals("WE1"))){
                 System.out.println("Enter number of steps : ");
                 int stepsElephant = Integer.parseInt(br.readLine());
@@ -2347,9 +2776,9 @@ public class chessGame{
             // else if((playerChosenW-1)==11){
             //     WC2.showValidMoves();
             // }
-            // else if((playerChosenW-1)==12){
-            //     WH2.showValidMoves();
-            // }
+            else if((toShowWhite.get(playerChosenW-1).equals("WH2"))){
+                WH2.showValidMoves();
+            }
             else if((toShowWhite.get(playerChosenW-1).equals("WE2"))){
                 System.out.println("Enter number of steps : ");
                 int stepsElephant = Integer.parseInt(br.readLine());
